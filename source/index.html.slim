@@ -1,0 +1,34 @@
+---
+title: マジュニアテーブル
+---
+
+h3 フィルタ
+ul.list-inline
+  li
+    button.form-control type="check_box" hoge
+  li
+    button.form-control type="check_box" hoge
+
+a.btn.btn-primary href="#" data-bind="click: search"
+  i.fa.fa-search  検索
+
+
+h3 一覧
+table.table.table-bordered.table-condensed.table-hover data-majunior-items-url="items.json"
+  thead
+    tr
+      th 名前
+      th 身長
+      th 体重
+      th 戦闘力
+      th 特技
+  tbody data-bind="foreach: items"
+    tr
+      td
+        a data-bind="attr: { href: url }, text: label"
+      td.text-right data-bind="text: height"
+      td.text-right data-bind="text: weight"
+      td.text-right data-bind="text: power"
+      td data-bind="text: skill"
+
+= javascript_include_tag 'main.js'

@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "label": "ピッコロ",
+            "url": "http://google.co.jp",
+            "height": 200,
+            "weight": 116,
+            "power": 140000,
+            "skill": "魔貫光殺砲"
+        },
+        {
+            "label": "悟飯",
+            "url": "http://yahoo.co.jp",
+            "height": 176,
+            "weight": 61,
+            "power": 200000,
+            "skill": "魔閃光"
+        },
+        {
+            "label": "クリリン",
+            "url": "http://yahoo.co.jp",
+            "height": 153,
+            "weight": 45,
+            "power": 75000,
+            "skill": "気円斬"
+        },
+        {
+            "label": "フリーザ",
+            "url": "http://yahoo.co.jp",
+            "height": 158,
+            "weight": 55,
+            "power": 530000,
+            "skill": "ほほほほ"
+        }
+    ]
+}
