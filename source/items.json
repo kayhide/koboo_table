@@ -2,7 +2,7 @@
     "items": [
         {
             "label": "ピッコロ",
-            "url": "http://google.co.jp",
+            "url": "http://ja.wikipedia.org/wiki/%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
             "height": 200,
             "weight": 116,
             "power": 140000,
@@ -10,7 +10,7 @@
         },
         {
             "label": "悟飯",
-            "url": "http://yahoo.co.jp",
+            "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E9%A3%AF",
             "height": 176,
             "weight": 61,
             "power": 200000,
@@ -18,7 +18,7 @@
         },
         {
             "label": "クリリン",
-            "url": "http://yahoo.co.jp",
+            "url": "http://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%83%AA%E3%83%B3",
             "height": 153,
             "weight": 45,
             "power": 75000,
@@ -26,7 +26,7 @@
         },
         {
             "label": "フリーザ",
-            "url": "http://yahoo.co.jp",
+            "url": "http://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B6",
             "height": 158,
             "weight": 55,
             "power": 530000,

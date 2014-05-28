@@ -2,25 +2,25 @@
 title: マジュニアテーブル
 ---
 
-h3 フィルタ
-ul.list-inline
-  li
-    button.form-control type="check_box" hoge
-  li
-    button.form-control type="check_box" hoge
-
-a.btn.btn-primary href="#" data-bind="click: search"
-  i.fa.fa-search  検索
-
+h3
+  | フィルタ
+  small 未実装
+label.checkbox-inline
+  input type="checkbox" 地球人
+label.checkbox-inline
+  input type="checkbox" 宇宙人
 
 h3 一覧
 table.table.table-bordered.table-condensed.table-hover data-majunior-items-url="items.json"
   thead
     tr
       th 名前
-      th 身長
-      th 体重
-      th 戦闘力
+      th data-majunior-sort="height"
+        | 身長
+      th data-majunior-sort="weight"
+        | 体重
+      th data-majunior-sort="power"
+        | 戦闘力
       th 特技
   tbody data-bind="foreach: items"
     tr
