@@ -14,14 +14,18 @@ h3 一覧
 table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
   thead
     tr
-      th 名前
+      th data-koboo-sort="label"
+        | 名前
       th data-koboo-sort="height"
         | 身長
       th data-koboo-sort="weight"
         | 体重
       th data-koboo-sort="power"
         | 戦闘力
-      th 特技
+      th data-koboo-sort="skill"
+        | 特技
+      th data-koboo-sort="race"
+        | 種族
   tbody data-bind="foreach: items"
     tr
       td
@@ -30,5 +34,6 @@ table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="ite
       td.text-right data-bind="text: weight"
       td.text-right data-bind="text: power"
       td data-bind="text: skill"
+      td data-bind="text: race"
 
 = javascript_include_tag 'main.js'

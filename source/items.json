@@ -6,7 +6,8 @@
             "height": 200,
             "weight": 116,
             "power": 140000,
-            "skill": "魔貫光殺砲"
+            "skill": "魔貫光殺砲",
+            "race": "宇宙人"
         },
         {
             "label": "悟飯",
@@ -14,7 +15,8 @@
             "height": 176,
             "weight": 61,
             "power": 200000,
-            "skill": "魔閃光"
+            "skill": "魔閃光",
+            "race": "地球人"
         },
         {
             "label": "クリリン",
@@ -22,7 +24,8 @@
             "height": 153,
             "weight": 45,
             "power": 75000,
-            "skill": "気円斬"
+            "skill": "気円斬",
+            "race": "地球人"
         },
         {
             "label": "フリーザ",
@@ -30,7 +33,8 @@
             "height": 158,
             "weight": 55,
             "power": 530000,
-            "skill": "ほほほほ"
+            "skill": "ほほほほ",
+            "race": "宇宙人"
         }
     ]
 }
