@@ -30,8 +30,8 @@ class KobooViewModel
 
   filter: (item)->
     b = true
-    for prop, pattern of @filters
-       b = b and item[prop].match(new RegExp(pattern))
+    for pred in @filters
+       b = b and pred(item)
     b
 
   update_sort: ->
@@ -42,12 +42,32 @@ class KobooViewModel
 
   update_filter: ->
     texts = {}
+    numbers = {}
     for e in $('.filter:checked')
       prop = $(e).data('koboo-filter')
-      texts[prop] ||= []
-      texts[prop].push($(e).data('koboo-filter-text') || $(e).closest('label').text())
-    @filters = {}
-    for prop, vals of texts
-      @filters[prop] = vals.join('|')
+      if $(e).data('koboo-filter-gt') or
+         $(e).data('koboo-filter-gte') or
+         $(e).data('koboo-filter-lt') or
+         $(e).data('koboo-filter-lte')
+        numbers[prop] =
+          gt: Number($(e).data('koboo-filter-gt'))
+          gte: Number($(e).data('koboo-filter-gte'))
+          lt: Number($(e).data('koboo-filter-lt'))
+          lte: Number($(e).data('koboo-filter-lte'))
+      else
+        texts[prop] ?= []
+        texts[prop].push($(e).data('koboo-filter-text') or $(e).closest('label').text())
+    @filters = for prop, vals of texts when vals.length > 0
+      do (prop, vals) ->
+        (item) ->
+          item[prop].match(new RegExp(vals.join('|')))
+    preds = for prop, obj of numbers
+      do (prop, obj) ->
+        (item) ->
+          ((not obj.gt) or (item[prop] > obj.gt)) and
+          ((not obj.gte) or (item[prop] >= obj.gte)) and
+          ((not obj.lt) or (item[prop] < obj.lt)) and
+          ((not obj.lte) or (item[prop] <= obj.lte))
+    @filters.push pred for pred in preds
 
 @KobooViewModel = KobooViewModel

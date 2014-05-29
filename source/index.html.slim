@@ -1,10 +1,20 @@
 ---
 title: コブータブル
 ---
-
-h3
-  | フィルタ
+.page-header
+  h2 コブータブル
+h3 フィルタ
 dl
+  dt 戦闘力
+  dd
+    label.radio-inline
+      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" 全て
+    label.radio-inline
+      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" data-koboo-filter-lt="100000" 10万未満
+    label.radio-inline
+      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="100000"  data-koboo-filter-lt="200000" 〜20万未満
+    label.radio-inline
+      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="200000"  20万以上
   dt 特技
   dd
     label.checkbox-inline
@@ -18,7 +28,8 @@ dl
     label.radio-inline
       input type="radio" name="race" data-koboo-filter="race" 地球人
     label.radio-inline
-      input type="radio" name="race" checked="checked" data-koboo-filter="race" 宇宙人
+      / input type="radio" name="race" checked="checked" data-koboo-filter="race" 宇宙人
+      input type="radio" name="race" data-koboo-filter="race" 宇宙人
 
 h3 一覧
 table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
