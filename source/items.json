@@ -10,6 +10,24 @@
             "race": "宇宙人"
         },
         {
+            "label": "悟空",
+            "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E7%A9%BA_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+            "height": 175,
+            "weight": 62,
+            "power": 900000,
+            "skill": "元気玉",
+            "race": "宇宙人"
+        },
+        {
+            "label": "天津飯",
+            "url": "http://ja.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E9%A3%AF_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+            "height": 187,
+            "weight": 75,
+            "power": 120000,
+            "skill": "気功砲",
+            "race": "地球人"
+        },
+        {
             "label": "悟飯",
             "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E9%A3%AF",
             "height": 176,
