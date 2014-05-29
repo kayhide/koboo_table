@@ -1,4 +1,4 @@
-class MajuniorViewModel
+class KobooViewModel
   constructor: ->
     @items = ko.observableArray()
 
@@ -7,7 +7,7 @@ class MajuniorViewModel
 
   update_items: ->
     @update_sort()
-    items = Majunior.items
+    items = Koboo.items
     if @current_sort
       items = items.sort((a, b)=>
         a[@current_sort] - b[@current_sort]
@@ -20,7 +20,7 @@ class MajuniorViewModel
   update_sort: ->
     @last_sort = @current_sort
     elm = $('.sort-up,.sort-down')
-    @current_sort = elm.data('majunior-sort')
+    @current_sort = elm.data('koboo-sort')
     @sort_down = elm.hasClass('sort-down')
 
-@MajuniorViewModel = MajuniorViewModel
+@KobooViewModel = KobooViewModel

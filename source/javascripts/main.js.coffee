@@ -1,14 +1,14 @@
-#= require majunior
-#= require majunior_view_model
+#= require koboo
+#= require koboo_view_model
 $ ->
-  url = $('[data-majunior-items-url]').data('majunior-items-url')
+  url = $('[data-koboo-items-url]').data('koboo-items-url')
   $.getJSON url, (json)->
-    Majunior.items = json.items
+    Koboo.items = json.items
     ko.dataFor(document.body).update_items()
-  ko.applyBindings(new MajuniorViewModel())
+  ko.applyBindings(new KobooViewModel())
 
-  $('[data-majunior-sort]').addClass('sort')
-  $('[data-majunior-sort]').on 'click', (e)->
+  $('[data-koboo-sort]').addClass('sort')
+  $('[data-koboo-sort]').on 'click', (e)->
     down = $(this).hasClass('sort-up')
     $('.sort-up,.sort-down').removeClass('sort-up').removeClass('sort-down')
     if down

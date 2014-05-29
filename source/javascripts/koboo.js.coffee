@@ -1,7 +1,7 @@
-class Majunior
+class Koboo
   @items = []
 
   @all: ->
     @items
 
-@Majunior = Majunior
+@Koboo = Koboo
