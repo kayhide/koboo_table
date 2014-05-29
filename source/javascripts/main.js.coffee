@@ -1,9 +1,8 @@
-#= require koboo
 #= require koboo_view_model
 $ ->
   url = $('[data-koboo-items-url]').data('koboo-items-url')
   $.getJSON url, (json)->
-    Koboo.items = json.items
+    KobooViewModel.all = json.items
     ko.dataFor(document.body).update_items()
   ko.applyBindings(new KobooViewModel())
 
@@ -15,5 +14,9 @@ $ ->
       $(this).addClass('sort-down')
     else
       $(this).addClass('sort-up')
+    ko.dataFor(document.body).update_items()
+
+  $('[data-koboo-filter]').addClass('filter')
+  $('[data-koboo-filter]').on 'click', (e)->
     ko.dataFor(document.body).update_items()
 

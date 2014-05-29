@@ -4,11 +4,21 @@ title: コブータブル
 
 h3
   | フィルタ
-  small 未実装
-label.checkbox-inline
-  input type="checkbox" 地球人
-label.checkbox-inline
-  input type="checkbox" 宇宙人
+dl
+  dt 特技
+  dd
+    label.checkbox-inline
+      input type="checkbox" data-koboo-filter="skill" かめはめ波
+    label.checkbox-inline
+      input type="checkbox" data-koboo-filter="skill" 魔
+  dt 種族
+  dd
+    label.radio-inline
+      input type="radio" name="race" data-koboo-filter="race" data-koboo-filter-text="." 全て
+    label.radio-inline
+      input type="radio" name="race" data-koboo-filter="race" 地球人
+    label.radio-inline
+      input type="radio" name="race" checked="checked" data-koboo-filter="race" 宇宙人
 
 h3 一覧
 table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
