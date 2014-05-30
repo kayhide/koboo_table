@@ -24,9 +24,9 @@ subtitle: コブータブル
       dt 特技
       dd
         label.checkbox-inline
-          input type="checkbox" data-koboo-filter="skill" 気
+          input type="checkbox" data-koboo-filter="skill" かめはめ波
         label.checkbox-inline
-          input type="checkbox" data-koboo-filter="skill" ^気
+          input type="checkbox" data-koboo-filter="skill" data-koboo-filter-text="^かめはめ波$" かめはめ波（完全一致）
         label.checkbox-inline
           input type="checkbox" data-koboo-filter="skill" 魔
       dt 種族
@@ -208,10 +208,10 @@ table.table.table-bordered.table-condensed.table-hover
       td
         markdown:
           フィルタの対象となるアイテムのプロパティ名。  
-          `type="checkbox"` で複数チェックされた場合は、どれかにヒットすればよい（論理和）。
+          複数チェックされた場合は、どれかにヒットすればよい（論理和）。
 
           プロパティが文字列の場合
-          : `*-filter-text` でヒットする部分文字列を設定する。
+          : `*-filter-text` でヒットするパターンを設定する。
 
           プロパティが数値の場合
           : `*-filter-gte`、`*-filter-lt` などでヒットする数値の範囲を設定する。
@@ -225,13 +225,13 @@ table.table.table-bordered.table-condensed.table-hover
         p data-koboo-filter-text
       td
         markdown:
-          プロパティが文字列の場合、ヒットする部分文字列を設定する。  
+          プロパティが文字列の場合、ヒットするパターンを設定する。  
           省略した場合、ラベルのテキストが代用される。  
           正規表現として扱われる。
       td
         markdown:
-          `魔`  
-          `元気`  
+          `魔`（部分一致でヒットする）  
+          `^かめはめ波$`（完全一致でヒットする）  
           `.` （全てのアイテムがヒットする）
     tr
       th input
