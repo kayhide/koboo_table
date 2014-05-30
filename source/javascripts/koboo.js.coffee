@@ -1,6 +1,6 @@
 #= require koboo_view_model
 $ ->
-  url = $('[data-koboo-items-url]').data('koboo-items-url')
+  url = $('[data-koboo-items]').data('koboo-items')
   $.getJSON url, (json)->
     KobooViewModel.all = json.items
     ko.dataFor(document.body).update_items()

@@ -7,7 +7,7 @@ subtitle: コブータブル
 .panel.panel-default
   p.pull-right
     | データ： 
-    = link_to 'item.json', 'items.json'
+    = link_to 'items.json', 'items.json'
   .panel-body
     h4 フィルタ
     dl
@@ -38,7 +38,7 @@ subtitle: コブータブル
         label.radio-inline
           input type="radio" name="race" data-koboo-filter="race" 宇宙人
     h4 一覧
-    table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
+    table.table.table-bordered.table-condensed.table-hover data-koboo-items="items.json"
       thead
         tr
           th data-koboo-sort="label"
@@ -129,7 +129,7 @@ ol
     | テーブルタグを追加する。
     markdown:
       ~~~html
-      <table data-koboo-items-url="items.json">
+      <table data-koboo-items="items.json">
         <tr>
           <th data-koboo-sort="label">名前</th>
           <th data-koboo-sort="power">戦闘力</th>
@@ -188,12 +188,11 @@ table.table.table-bordered.table-condensed.table-hover
   tbody
     tr
       th table
-      th data-koboo-items-url
-      td データのURL。
+      th data-koboo-items
+      td データファイルへの相対パス。
       td
         markdown:
-          `item.json`  
-          `http://somewhere.com/data/item.json`
+          `items.json`
     tr
       th th, td
       th data-koboo-sort
