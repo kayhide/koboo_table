@@ -1,0 +1,15 @@
+.sort:after {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    float: right;
+    content: "\f0dc";
+}
+
+.sort-up:after {
+    content: "\f0de";
+}
+
+.sort-down:after {
+    content: "\f0dd";
+}
