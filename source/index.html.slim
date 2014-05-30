@@ -1,58 +1,266 @@
 ---
-title: コブータブル
+title: Koboo Table
+subtitle: コブータブル
 ---
-.page-header
-  h2 コブータブル
-h3 フィルタ
-dl
-  dt 戦闘力
-  dd
-    label.radio-inline
-      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" 全て
-    label.radio-inline
-      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" data-koboo-filter-lt="100000" 10万未満
-    label.radio-inline
-      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="100000"  data-koboo-filter-lt="200000" 〜20万未満
-    label.radio-inline
-      input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="200000"  20万以上
-  dt 特技
-  dd
-    label.checkbox-inline
-      input type="checkbox" data-koboo-filter="skill" 気
-    label.checkbox-inline
-      input type="checkbox" data-koboo-filter="skill" 魔
-  dt 種族
-  dd
-    label.radio-inline
-      input type="radio" name="race" data-koboo-filter="race" data-koboo-filter-text="." 全て
-    label.radio-inline
-      input type="radio" name="race" data-koboo-filter="race" 地球人
-    label.radio-inline
-      / input type="radio" name="race" checked="checked" data-koboo-filter="race" 宇宙人
-      input type="radio" name="race" data-koboo-filter="race" 宇宙人
 
-h3 一覧
-table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
+
+.panel.panel-default
+  p.pull-right
+    | データ： 
+    a href="items.json" item.json
+  .panel-body
+    h4 フィルタ
+    dl
+      dt 戦闘力
+      dd
+        label.radio-inline
+          input type="radio" name="power" checked="checked" data-koboo-filter="power" data-koboo-filter-gte="1" 全て
+        label.radio-inline
+          input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" data-koboo-filter-lt="100000" 10万未満
+        label.radio-inline
+          input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="100000"  data-koboo-filter-lt="200000" 10万以上20万未満
+        label.radio-inline
+          input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="200000"  20万以上
+      dt 特技
+      dd
+        label.checkbox-inline
+          input type="checkbox" data-koboo-filter="skill" 気
+        label.checkbox-inline
+          input type="checkbox" data-koboo-filter="skill" ^気
+        label.checkbox-inline
+          input type="checkbox" data-koboo-filter="skill" 魔
+      dt 種族
+      dd
+        label.radio-inline
+          input type="radio" name="race" checked="checked" data-koboo-filter="race" data-koboo-filter-text="." 全て
+        label.radio-inline
+          input type="radio" name="race" data-koboo-filter="race" 地球人
+        label.radio-inline
+          input type="radio" name="race" data-koboo-filter="race" 宇宙人
+    h4 一覧
+    table.table.table-bordered.table-condensed.table-hover data-koboo-items-url="items.json"
+      thead
+        tr
+          th data-koboo-sort="label"
+            | 名前
+          th data-koboo-sort="height"
+            | 身長
+          th data-koboo-sort="weight"
+            | 体重
+          th data-koboo-sort="power"
+            | 戦闘力
+          th data-koboo-sort="skill"
+            | 特技
+          th data-koboo-sort="race"
+            | 種族
+      tbody data-bind="foreach: items"
+        tr
+          td
+            a data-bind="attr: { href: url }, text: label"
+          td.text-right data-bind="text: height"
+          td.text-right data-bind="text: weight"
+          td.text-right data-bind="text: power"
+          td data-bind="text: skill"
+          td data-bind="text: race"
+
+h3 使い方
+ol
+  li
+    markdown:
+      以下をダウンロードする。
+
+      - #{link_to 'stylesheets/koboo.css', 'stylesheets/koboo.css'}
+      - #{link_to 'javascripts/koboo.js', 'javascripts/koboo.js'}
+  li
+    markdown:
+      ヘッダータグを追加する。
+
+      ~~~ html
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+      <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
+      <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js" type="text/javascript"></script>
+      <link href="/stylesheets/koboo.css" rel="stylesheet" type="text/css" />
+      <script src="/javascripts/koboo.js" type="text/javascript"></script>
+      ~~~
+  li
+    markdown:
+      データファイルを作成する。
+      `items.json` というファイル名で html ファイルと同じディレクトリに保存する。
+
+      ~~~
+      {
+          "items": [
+              {
+                  "label": "ピッコロ",
+                  "url": "http://ja.wikipedia.org/wiki/%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+                  "power": 140000,
+                  "skill": "魔貫光殺砲",
+              },
+              {
+                  "label": "悟空",
+                  "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E7%A9%BA_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+                  "power": 900000,
+                  "skill": "元気玉",
+              }
+          ]
+      }
+      ~~~
+  li
+    | フィルタタグを追加する。
+    markdown:
+      ~~~ html
+      <h4>戦闘力</h4>
+      <label>
+        <input data-koboo-filter="power" data-koboo-filter-gte="1" name="power" type="radio">全て</input>
+      </label>
+      <label>
+        <input data-koboo-filter="power" data-koboo-filter-gte="200000" name="power" type="radio">20万以上</input>
+      </label>
+      <h4>特技</h4>
+      <label>
+        <input data-koboo-filter="skill" type="checkbox">気</input>
+      </label>
+      <label>
+        <input data-koboo-filter="skill" type="checkbox">魔</input>
+      </label>
+      ~~~
+  li
+    | テーブルタグを追加する。
+    markdown:
+      ~~~html
+      <table data-koboo-items-url="items.json">
+        <tr>
+          <th data-koboo-sort="label">名前</th>
+          <th data-koboo-sort="power">戦闘力</th>
+          <th data-koboo-sort="skill">特技</th>
+        </tr>
+        <tbody data-bind="foreach: items">
+          <tr>
+            <td><a data-bind="attr: { href: url }, text: label"></a></td>
+            <td data-bind="text: height"></td>
+            <td data-bind="text: power"></td>
+            <td data-bind="text: skill"></td>
+          </tr>
+        </tbody>
+      </table>
+      ~~~
+
+
+h3 ドキュメント
+h4 依存関係
+p このフレームワークは以下を利用します。
+
+ul
+  li
+    a href="http://getbootstrap.com/" 
+      | Bootstrap
+  li
+    a href="http://fortawesome.github.io/Font-Awesome/"
+      | Font Awesome
+  li
+    a href="http://jquery.com/"
+      | jQuery
+  li
+    a href="http://knockoutjs.com/"
+      | Knockout
+
+p CDN を利用すると楽です。
+markdown:
+  ~~~ html
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js" type="text/javascript"></script>
+  ~~~
+
+h4 マークアップ
+markdown:
+  このフレームワークはhtmlタグにアトリビュートを追加することによって動作します。
+  アトリビュート名は全て `data-koboo-*` です。
+table.table.table-bordered.table-condensed.table-hover
   thead
     tr
-      th data-koboo-sort="label"
-        | 名前
-      th data-koboo-sort="height"
-        | 身長
-      th data-koboo-sort="weight"
-        | 体重
-      th data-koboo-sort="power"
-        | 戦闘力
-      th data-koboo-sort="skill"
-        | 特技
-      th data-koboo-sort="race"
-        | 種族
-  tbody data-bind="foreach: items"
+      th タグ
+      th アトリビュート
+      th 説明
+      th 値の例
+  tbody
     tr
+      th table
+      th data-koboo-items-url
+      td データのURL。
       td
-        a data-bind="attr: { href: url }, text: label"
-      td.text-right data-bind="text: height"
-      td.text-right data-bind="text: weight"
-      td.text-right data-bind="text: power"
-      td data-bind="text: skill"
-      td data-bind="text: race"
+        markdown:
+          `item.json`  
+          `http://somewhere.com/data/item.json`
+    tr
+      th th, td
+      th data-koboo-sort
+      td ソートの対象となるアイテムのプロパティ名。
+      td
+        markdown:
+          `label`  
+          `power`
+    tr
+      th input
+      th data-koboo-filter
+      td
+        markdown:
+          フィルタの対象となるアイテムのプロパティ名。  
+          `type="checkbox"` で複数チェックされた場合は、どれかにヒットすればよい（論理和）。
+
+          プロパティが文字列の場合
+          : `*-filter-text` でヒットする部分文字列を設定する。
+
+          プロパティが数値の場合
+          : `*-filter-gte`、`*-filter-lt` などでヒットする数値の範囲を設定する。
+      td
+        markdown:
+          `label`  
+          `power`
+    tr
+      th input
+      th
+        p data-koboo-filter-text
+      td
+        markdown:
+          プロパティが文字列の場合、ヒットする部分文字列を設定する。  
+          省略した場合、ラベルのテキストが代用される。  
+          正規表現として扱われる。
+      td
+        markdown:
+          `魔`  
+          `元気`  
+          `.` （全てのアイテムがヒットする）
+    tr
+      th input
+      th
+        p data-koboo-filter-gt
+        p data-koboo-filter-gte
+        p data-koboo-filter-lt
+        p data-koboo-filter-lte
+      td
+        markdown:
+          プロパティが数値の場合、ヒットする数値範囲を設定する。  
+          `gt`、`gte`、`lt`、`lte` は、それぞれ `>`、`>=`、`<`、`<=` に対応する。  
+          例えば、`gte` を `5`、`lt` を `10` に設定すると、5以上10未満のアイテムがヒットする。  
+          `0` は設定できないので注意。
+      td
+        markdown:
+          `5`  
+          `530000`
+
+h4 データ
+markdown:
+  データは `json`フォーマット。`items` のリストが必須。  
+  文字列はダブルクオーテーションで囲む。数値は囲まない。
+
+  ~~~json
+  {
+    "items": [
+      { "text": "ほげほげ", "num": 14 },
+      { "text": "ぴよぴよ", "num": 3 }
+    ]
+  }
+  ~~~
