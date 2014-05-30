@@ -10,6 +10,8 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  set :relative_links, true
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
@@ -20,7 +22,7 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
