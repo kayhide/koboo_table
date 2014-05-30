@@ -75,7 +75,7 @@ ol
     markdown:
       ヘッダータグを追加する。
 
-      ~~~ html
+      ~~~html
       <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
       <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
@@ -87,6 +87,7 @@ ol
     markdown:
       データファイルを作成する。
       `items.json` というファイル名で html ファイルと同じディレクトリに保存する。
+      文字コードはutf-8。
 
       ~~~
       {
@@ -95,13 +96,13 @@ ol
                   "label": "ピッコロ",
                   "url": "http://ja.wikipedia.org/wiki/%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
                   "power": 140000,
-                  "skill": "魔貫光殺砲",
+                  "skill": "魔貫光殺砲"
               },
               {
                   "label": "悟空",
                   "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E7%A9%BA_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
                   "power": 900000,
-                  "skill": "元気玉",
+                  "skill": "元気玉"
               }
           ]
       }
@@ -109,7 +110,7 @@ ol
   li
     | フィルタタグを追加する。
     markdown:
-      ~~~ html
+      ~~~html
       <h4>戦闘力</h4>
       <label>
         <input data-koboo-filter="power" data-koboo-filter-gte="1" name="power" type="radio">全て</input>
@@ -167,7 +168,7 @@ ul
 
 p CDN を利用すると楽です。
 markdown:
-  ~~~ html
+  ~~~html
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />  
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
@@ -253,7 +254,8 @@ table.table.table-bordered.table-condensed.table-hover
 h4 データ
 markdown:
   データは `json`フォーマット。`items` のリストが必須。  
-  文字列はダブルクオーテーションで囲む。数値は囲まない。
+  文字列はダブルクオーテーションで囲む。数値は囲まない。  
+  文字コードはutf-8。
 
   ~~~json
   {
