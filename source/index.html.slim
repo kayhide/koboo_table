@@ -56,7 +56,10 @@ subtitle: コブータブル
       tbody data-bind="foreach: items"
         tr
           td
-            a data-bind="attr: { href: url }, text: label"
+            a data-bind="attr: { href: url }"
+              img data-bind="attr: { src: image_url }"
+              br
+              span data-bind="text: label"
           td.text-right data-bind="text: height"
           td.text-right data-bind="text: weight"
           td.text-right data-bind="text: power"
@@ -265,3 +268,32 @@ markdown:
     ]
   }
   ~~~
+
+
+h3 例
+markdown:
+  画像にリンクを作成する場合。
+
+  `items.json`
+
+  ~~~json
+  {
+    "items": [
+      {
+        "label": "悟飯",
+        "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E9%A3%AF",
+        "image_url": "./images/gohan.jpg"
+      }
+    ]
+  }
+  ~~~
+
+  `*.html`
+
+  ~~~html
+  <a data-bind="attr: { href: url }">
+    <img data-bind="attr: { src: image_url }" />
+    <span data-bind="text: label"></span>
+  </a>
+  ~~~
+

@@ -3,6 +3,7 @@
         {
             "label": "ピッコロ",
             "url": "http://ja.wikipedia.org/wiki/%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+            "image_url": "./images/piccolo.jpg",
             "height": 200,
             "weight": 116,
             "power": 140000,
@@ -12,6 +13,7 @@
         {
             "label": "悟空",
             "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E7%A9%BA_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+            "image_url": "./images/goku.jpg",
             "height": 175,
             "weight": 62,
             "power": 900000,
@@ -21,6 +23,7 @@
         {
             "label": "天津飯",
             "url": "http://ja.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E9%A3%AF_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)",
+            "image_url": "./images/tien.jpg",
             "height": 187,
             "weight": 75,
             "power": 120000,
@@ -30,6 +33,7 @@
         {
             "label": "悟飯",
             "url": "http://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E9%A3%AF",
+            "image_url": "./images/gohan.jpg",
             "height": 176,
             "weight": 61,
             "power": 200000,
@@ -39,6 +43,7 @@
         {
             "label": "クリリン",
             "url": "http://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%83%AA%E3%83%B3",
+            "image_url": "./images/kuririn.jpg",
             "height": 153,
             "weight": 45,
             "power": 75000,
@@ -48,6 +53,7 @@
         {
             "label": "フリーザ",
             "url": "http://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B6",
+            "image_url": "./images/friza.jpg",
             "height": 158,
             "weight": 55,
             "power": 530000,
