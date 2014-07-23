@@ -60,13 +60,14 @@ subtitle: コブータブル
               img data-bind="attr: { src: image_url }"
               br
               span data-bind="text: label"
-          td.text-right data-bind="text: height"
-          td.text-right data-bind="text: weight"
+          td.text-right data-bind="text: height.toFixed(1)"
+          td.text-right data-bind="text: weight.toFixed(1)"
           td.text-right data-bind="text: power"
           td data-bind="text: skill"
           td data-bind="text: race"
 
-h3 使い方
+.page-header
+  h3 使い方
 ol
   li
     markdown:
@@ -150,8 +151,8 @@ ol
       </table>
       ~~~
 
-
-h3 ドキュメント
+.page-header
+  h3 ドキュメント
 h4 依存関係
 p このフレームワークは以下を利用します。
 
@@ -269,11 +270,10 @@ markdown:
   }
   ~~~
 
-
-h3 例
+.page-header
+  h3 例
+h4 画像にリンクを作成する
 markdown:
-  画像にリンクを作成する場合。
-
   `items.json`
 
   ~~~json
@@ -295,5 +295,13 @@ markdown:
     <img data-bind="attr: { src: image_url }" />
     <span data-bind="text: label"></span>
   </a>
+  ~~~
+hr
+h4 小数点以下を表示する
+markdown:
+  `*.html`
+
+  ~~~html
+  <span data-bind="text: power.toFixed(1)"></span>
   ~~~
 
