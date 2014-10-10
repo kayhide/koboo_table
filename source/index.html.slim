@@ -3,11 +3,11 @@ title: Koboo Table
 subtitle: コブータブル
 ---
 
-
+- items_path = 'data/items.json'
 .panel.panel-default
   p.pull-right
     | データ： 
-    = link_to 'items.json', 'items.json'
+    = link_to File.basename(items_path), items_path
   .panel-body
     h4 フィルタ
     dl
@@ -38,7 +38,7 @@ subtitle: コブータブル
         label.radio-inline
           input type="radio" name="race" data-koboo-filter="race" 宇宙人
     h4 一覧
-    table.table.table-bordered.table-condensed.table-hover data-koboo-items="items.json"
+    table.table.table-bordered.table-condensed.table-hover data-koboo-items=items_path
       thead
         tr
           th data-koboo-sort="label"
