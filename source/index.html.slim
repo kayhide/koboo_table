@@ -67,7 +67,7 @@ subtitle: コブータブル
           td.text-right data-bind="text: power"
           td data-bind="text: skill"
           td data-bind="text: race"
-          td.text-right data-bind="text: olfaction"
+          td.text-right data-bind="text: (typeof olfaction === 'number') ? olfaction.toFixed(1) : olfaction"
 
 .page-header
   h3 使い方
