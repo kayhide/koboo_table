@@ -8,7 +8,8 @@
             "weight": 116,
             "power": 140000,
             "skill": "魔貫光殺砲",
-            "race": "宇宙人"
+            "race": "宇宙人",
+            "olfaction": 10
         },
         {
             "label": "悟空",
@@ -18,7 +19,8 @@
             "weight": 62,
             "power": 900000,
             "skill": "超かめはめ波",
-            "race": "宇宙人"
+            "race": "宇宙人",
+            "olfaction": 53
         },
         {
             "label": "天津飯",
@@ -28,7 +30,8 @@
             "weight": 75,
             "power": 120000,
             "skill": "気功砲",
-            "race": "地球人"
+            "race": "地球人",
+            "olfaction": 22
         },
         {
             "label": "悟飯",
@@ -38,7 +41,8 @@
             "weight": 61,
             "power": 200000,
             "skill": "魔閃光",
-            "race": "地球人"
+            "race": "地球人",
+            "olfaction": 51
         },
         {
             "label": "クリリン",
@@ -48,7 +52,8 @@
             "weight": 45,
             "power": 75000,
             "skill": "かめはめ波",
-            "race": "地球人"
+            "race": "地球人",
+            "olfaction": "-"
         },
         {
             "label": "フリーザ",
@@ -58,7 +63,8 @@
             "weight": 55,
             "power": 530000,
             "skill": "ほほほほ",
-            "race": "宇宙人"
+            "race": "宇宙人",
+            "olfaction": 5
         }
     ]
 }

@@ -17,6 +17,10 @@ class KobooViewModel
       bval = b[prop]
       if typeof(aval) is 'number' and typeof(bval) is 'number'
         aval - bval
+      else if typeof(aval) is 'number'
+        if reverse then 1 else -1
+      else if typeof(bval) is 'number'
+        if reverse then -1 else 1
       else
         String(aval).localeCompare(String(bval))
     )
