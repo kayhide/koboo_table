@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "label": "ギニュー",
+            "image_url": "./images/ginyu.jpg",
+            "power": 120000
+        },
+        {
+            "label": "リクーム",
+            "image_url": "./images/rikum.jpg",
+            "power": 55000
+        },
+        {
+            "label": "バータ",
+            "image_url": "./images/bata.jpg",
+            "power": 53000
+        },
+        {
+            "label": "ジース",
+            "image_url": "./images/jis.jpg",
+            "power": 54000
+        },
+        {
+            "label": "グルド",
+            "image_url": "./images/gurud.jpg",
+            "power": 10000
+        }
+    ]
+}
