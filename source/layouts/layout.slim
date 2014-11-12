@@ -12,11 +12,18 @@ html
     = stylesheet_link_tag 'koboo'
     = javascript_include_tag 'koboo'
   body
-    header.container
-      h2
-        = current_page.data.title
-        small= current_page.data.subtitle
-    hr
+    header
+      .navbar.navbar-default
+        .container
+          .navbar-header
+            = link_to '/', class: 'navbar-brand' do
+              = current_page.data.title
+              small= current_page.data.subtitle
+          .nav.navbar-nav.navbar-right
+            li class=((current_page.path =~ /sample1/) ? 'active' : '')
+              = link_to 'sample1', 'sample1.html'
+            li class=((current_page.path =~ /sample2/) ? 'active' : '')
+              = link_to 'sample2', 'sample2.html'
     .container
       .row
         .col-md-12

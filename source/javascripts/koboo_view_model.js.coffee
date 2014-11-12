@@ -1,11 +1,13 @@
 class KobooViewModel
-  constructor: ->
+  constructor: (root)->
+    @root = root
     @items = ko.observableArray()
+    @all_items = []
 
   update_items: ->
     @update_sort()
     @update_filter()
-    items = KobooViewModel.all
+    items = @all_items
     items = @sort_items(items, @current_sort, @sort_down) if @current_sort
     items = @filter_items(items)
     @items.removeAll()
@@ -40,14 +42,14 @@ class KobooViewModel
 
   update_sort: ->
     @last_sort = @current_sort
-    elm = $('.sort-up,.sort-down')
+    elm = @root.find('.sort-up,.sort-down')
     @current_sort = elm.data('koboo-sort')
     @sort_down = elm.hasClass('sort-down')
 
   update_filter: ->
     texts = {}
     numbers = {}
-    for e in $('.filter:checked')
+    for e in @root.find('.filter:checked')
       prop = $(e).data('koboo-filter')
       if $(e).data('koboo-filter-gt') or
          $(e).data('koboo-filter-gte') or

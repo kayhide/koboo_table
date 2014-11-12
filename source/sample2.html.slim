@@ -1,0 +1,75 @@
+---
+title: Koboo Table
+subtitle: コブータブル
+---
+
+- items_path = 'data/items.json'
+- items2_path = 'data/ginyus.json'
+.row
+  .col-md-6
+    .panel.panel-default data-koboo-items=items_path
+      p.pull-right
+        | データ： 
+        = link_to File.basename(items_path), items_path
+      .panel-body
+        h4 フィルタ
+        dl
+          dt 戦闘力
+          dd
+            label.radio-inline
+              input type="radio" name="power" checked="checked" data-koboo-filter="power" data-koboo-filter-gte="1" 全て
+            label.radio-inline
+              input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="1" data-koboo-filter-lt="100000" 10万未満
+            label.radio-inline
+              input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="100000"  data-koboo-filter-lt="200000" 10万以上20万未満
+            label.radio-inline
+              input type="radio" name="power" data-koboo-filter="power" data-koboo-filter-gte="200000"  20万以上
+        h4 一覧
+        table.table.table-bordered.table-condensed.table-hover
+          thead
+            tr
+              th
+              th data-koboo-sort="label"
+                | 名前
+              th.sort-up data-koboo-sort="power"
+                | 戦闘力
+          tbody data-bind="foreach: items"
+            tr
+              td
+                a data-bind="attr: { href: url }"
+                  img data-bind="attr: { src: image_url }" style="width:100px"
+              td data-bind="text: label"
+              td.text-right data-bind="text: power"
+  .col-md-6
+    .panel.panel-default data-koboo-items=items2_path
+      p.pull-right
+        | データ： 
+        = link_to File.basename(items2_path), items2_path
+      .panel-body
+        h4 フィルタ
+        dl
+          dt 戦闘力
+          dd
+            label.radio-inline
+              input type="radio" name="power-2" checked="checked" data-koboo-filter="power" data-koboo-filter-gte="1" 全て
+            label.radio-inline
+              input type="radio" name="power-2" data-koboo-filter="power" data-koboo-filter-gte="1" data-koboo-filter-lt="100000" 10万未満
+            label.radio-inline
+              input type="radio" name="power-2" data-koboo-filter="power" data-koboo-filter-gte="100000"  data-koboo-filter-lt="200000" 10万以上20万未満
+            label.radio-inline
+              input type="radio" name="power-2" data-koboo-filter="power" data-koboo-filter-gte="200000"  20万以上
+        h4 一覧
+        table.table.table-bordered.table-condensed.table-hover
+          thead
+            tr
+              th
+              th data-koboo-sort="label"
+                | 名前
+              th.sort-down data-koboo-sort="power"
+                | 戦闘力
+          tbody data-bind="foreach: items"
+            tr
+              td
+                img data-bind="attr: { src: image_url }" style="width:100px"
+              td data-bind="text: label"
+              td.text-right data-bind="text: power"
