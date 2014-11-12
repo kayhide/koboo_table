@@ -129,7 +129,7 @@ table.table.table-bordered.table-condensed.table-hover
       th 値の例
   tbody
     tr
-      th table
+      th table, div
       th data-koboo-items
       td データファイルへの相対パス。
       td
@@ -241,4 +241,39 @@ markdown:
   ~~~html
   <span data-bind="text: power.toFixed(1)"></span>
   ~~~
+hr
+h4 複数のテーブルを扱う
+markdown:
+  複数のテーブルを扱う場合は、フィルタやソートのタグを含む `div` にて `data-koboo-items` を設定します。
 
+  `*.html`
+
+  ~~~html
+  <div data-koboo-items="data/items1.json">
+  ...filters...
+  <table>
+  ...
+  </table>
+  </div>
+
+  <div data-koboo-items="data/items2.json">
+  ...filters...
+  <table>
+  ...
+  </table>
+  </div>
+  ~~~
+p.text-right
+  = link_to '>> サンプル', 'sample2.html'
+
+
+hr
+h4 デフォルトのソートを設定する
+markdown:
+  `data-koboo-sort` のタグに `sort-up` か `sort-down` のクラスを設定します。
+
+  `*.html`
+
+  ~~~html
+  <th class="sort-down" data-koboo-sort="power">戦闘力</th>
+  ~~~
